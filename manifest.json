@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "rmshorts",
+    "version": "0.1.0",
+  
+    "description": "Block youtube shorts in your feed",
+    "content_scripts": [
+        {
+            "matches": ["https://www.youtube.com/"],
+            "js": ["index.js"],
+            "inject_js":{
+                "run_at": "document_end"
+                }
+        },
+        {
+            "matches":["https://www.youtube.com/shorts/*"],
+            "js": ["shorts.js"],
+            "inject_js":{
+                "run_at":"document_start"
+            }
+        }
+    ]
+}
