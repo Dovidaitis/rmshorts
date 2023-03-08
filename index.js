@@ -1,3 +1,5 @@
+let yt_logo = document.body.getElementsByClassName("yt-simple-endpoint style-scope ytd-topbar-logo-renderer");
+
 function removeShortsMenu(){
     let menu = document.body.getElementsByClassName("style-scope ytd-guide-section-renderer");
     if (menu.length > 4){
@@ -15,7 +17,14 @@ function removeShortsSuggestions(){
     }
 }
 
+function addLogoListener(){
+    logo[0].addEventListener('click', function(event) {
+      main();
+      });
+}
+
 function main(){
+    addLogoListener();
     setTimeout(removeShortsSuggestions, 3000);
     setTimeout(removeShortsMenu, 4000);
 }
